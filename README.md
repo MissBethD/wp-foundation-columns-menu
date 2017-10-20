@@ -17,11 +17,11 @@ wp_nav_menu( $args );
 The nav menu will need to be placed inside of a `row` element, which is excluded from the walker to accommodate items outside of the menu that you might want in the same row. This will produce the following layout, often used in footers:
 
 ```
-Top Level Item 1    Top Level Item 2		Top Level Item 3
---------						--------						--------
-Child item 1				Child item 1				Child item 1
-Child item 2				Child item 2			  Child item 2
-Child item 3				Child item 3				Child item 3
+Top Level Item 1    Top Level Item 2    Top Level Item 3
+--------            --------            --------
+Child item 1        Child item 1        Child item 1
+Child item 2        Child item 2        Child item 2
+Child item 3        Child item 3        Child item 3
 ```
 
 You can easily modify the column layouts to use the XY grid or take up different numbers of grid columns -- just make sure to modify the classes in both the walker and the `wp_nav_menu` function.
