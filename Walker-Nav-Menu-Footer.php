@@ -15,7 +15,7 @@ class Walker_Nav_Menu_Footer extends Walker_Nav_Menu {
         $indent      = ( $depth > 1 ) ? str_repeat( "\t", $depth - 1 ) : '';
 
         // Set class values for menu items
-        $classes     = empty( $item->classes ) ? array() : (array) $item->classes;
+        $classes     = empty( $item->classes ) ? [] : (array) $item->classes;
         $classes[]   = 'menu-item-' . $item->ID;
         $class_names = $value = '';
         $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
