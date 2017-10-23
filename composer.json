@@ -1,0 +1,16 @@
+{
+    "name": "chancestrickland/wp-foundation-columns-menu",
+    "description": "A WP walker to support a footer menu where top-level menu items are laid out as columns.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chance Strickland",
+            "email": "chance.strickland@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "johnpbloch/wordpress": "4.8"
+    },
+}

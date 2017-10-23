@@ -1,4 +1,6 @@
 <?php
+namespace Chance;
+
 class Walker_Nav_Menu_Footer extends Walker_Nav_Menu {
 
     // Set counter; later we'll use it to check for the first parent element
@@ -12,7 +14,7 @@ class Walker_Nav_Menu_Footer extends Walker_Nav_Menu {
             $this->current_menu = wp_get_nav_menu_object( $args->menu );
 
         // Set indent for sub-menu items
-        $indent      = ( $depth > 1 ) ? str_repeat( "\t", $depth - 1 ) : '';
+        $indent = ( $depth > 1 ) ? str_repeat( "\t", $depth - 1 ) : '';
 
         // Set class values for menu items
         $classes     = empty( $item->classes ) ? [] : (array) $item->classes;
@@ -23,7 +25,7 @@ class Walker_Nav_Menu_Footer extends Walker_Nav_Menu {
 
         // Set ID value for menu items
         $id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args );
-        $id = strlen( $id ) ? ' id="' . esc_attr( $id ) . '"' : '';
+        $id = ! empty( $id ) ? ' id="' . esc_attr( $id ) . '"' : '';
 
         // Check if you are displaying a top-level element to increment counter
         if ( $item->menu_item_parent === '0' ) {
