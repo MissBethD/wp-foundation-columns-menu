@@ -1,12 +1,14 @@
 <?php
-namespace Chance;
+namespace Theme_Name\Foundation;
 
-class Walker_Nav_Menu_Footer extends Walker_Nav_Menu {
+use Theme_Name\Foundation;
+
+class Walker_Nav_Menu_Footer extends \Walker_Nav_Menu {
 
     // Set counter; later we'll use it to check for the first parent element
-    public static $counter = 0;
+    protected $counter = 0;
 
-    function start_el( &$output, $item, $depth, $args ) {
+    function start_el( &$output, $item, $depth = 0, $args = [], $id = 0 ) {
 
         global $wp_query;
 
@@ -29,10 +31,10 @@ class Walker_Nav_Menu_Footer extends Walker_Nav_Menu {
 
         // Check if you are displaying a top-level element to increment counter
         if ( $item->menu_item_parent === '0' ) {
-            $this::$counter++;
+            $this->counter++;
         }
 
-        if ( $depth === 0 && $this::$counter > 1 ) {
+        if ( $depth === 0 && $this->counter > 1 ) {
             $output .= $indent . '</li></ul></div><div class="columns small-6 medium-3 large-2"><ul><li' . $id . $value . $class_names .'>';
         }
 

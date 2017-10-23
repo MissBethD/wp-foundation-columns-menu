@@ -9,7 +9,7 @@ $args = [
   'container'        => 'div',
   'container_class'  => "menu-{$menu->slug}-container columns small-6 medium-3 large-2",
   'menu_class'       => 'footer-menu',
-  'walker'           => new Walker_Nav_Menu_Footer,
+  'walker'           => new \Theme_Name\Foundation\Walker_Nav_Menu_Footer,
 ];
 wp_nav_menu( $args );
 ```
